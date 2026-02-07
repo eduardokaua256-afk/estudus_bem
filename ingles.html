@@ -53,8 +53,27 @@
     <p>• Tempos verbais simples</p>
     <p>• Interpretação de texto</p>
   </div>
+  <button id="btnIngles">✔ Marcar como concluído</button>
+<p id="statusIngles"></p>
+
 
   <a class="voltar" href="materias.html">⬅ Voltar</a>
 
 </body>
+  <script>
+  const btnIng = document.getElementById("btnIngles");
+  const statusIng = document.getElementById("statusIngles");
+
+  if (localStorage.getItem("inglesConcluido")) {
+    statusIng.innerText = "Concluído ✅";
+    btnIng.style.display = "none";
+  }
+
+  btnIng.onclick = function () {
+    localStorage.setItem("inglesConcluido", "true");
+    statusIng.innerText = "Concluído ✅";
+    btnIng.style.display = "none";
+  };
+</script>
+
 </html>
