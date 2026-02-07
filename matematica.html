@@ -44,6 +44,37 @@
   </style>
 </head>
 <body>
+  <body>
+
+  <h1>📐 Matemática</h1>
+
+  <div class="conteudo">
+    <p>Conteúdo principal de Matemática</p>
+
+    <button id="btnConcluir">✔ Marcar como concluído</button>
+    <p id="status"></p>
+  </div>
+
+  <a class="voltar" href="materias.html">⬅ Voltar</a>
+
+  <script>
+    const btn = document.getElementById("btnConcluir");
+    const status = document.getElementById("status");
+
+    if (localStorage.getItem("matematicaConcluida")) {
+      status.innerText = "Concluído ✅";
+      btn.style.display = "none";
+    }
+
+    btn.onclick = function () {
+      localStorage.setItem("matematicaConcluida", "true");
+      status.innerText = "Concluído ✅";
+      btn.style.display = "none";
+    };
+  </script>
+
+</body>
+
 
   <h1>📐 Matemática</h1>
 
@@ -58,4 +89,35 @@
   <a class="voltar" href="materias.html">⬅ Voltar</a>
 
 </body>
+  <body>
+
+  <h1>📐 Matemática</h1>
+
+  <div class="conteudo">
+    <p>Conteúdo principal de Matemática</p>
+
+    <button id="btnConcluir">✔ Marcar como concluído</button>
+    <p id="status"></p>
+  </div>
+
+  <a class="voltar" href="materias.html">⬅ Voltar</a>
+
+  <script>
+    const btn = document.getElementById("btnConcluir");
+    const status = document.getElementById("status");
+
+    if (localStorage.getItem("matematicaConcluida")) {
+      status.innerText = "Concluído ✅";
+      btn.style.display = "none";
+    }
+
+    btn.onclick = function () {
+      localStorage.setItem("matematicaConcluida", "true");
+      status.innerText = "Concluído ✅";
+      btn.style.display = "none";
+    };
+  </script>
+
+</body>
+
 </html>
