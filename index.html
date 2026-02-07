@@ -81,5 +81,18 @@
   </a>
 
 </div>
+  <script>
+  const barra = document.getElementById("barraPesquisa");
+
+  barra.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      window.open(
+        "https://www.google.com/search?q=" + barra.value,
+        "_blank"
+      );
+    }
+  });
+</script>
+
 </body>
 </html>
