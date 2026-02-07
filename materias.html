@@ -139,10 +139,8 @@
 
   let concluidas = 0;
 
-  materias.forEach(item => {
-    if (localStorage.getItem(item)) {
-      concluidas++;
-    }
+  materias.forEach(m => {
+    if (localStorage.getItem(m)) concluidas++;
   });
 
   const percentual = Math.round((concluidas / materias.length) * 100);
@@ -150,9 +148,25 @@
   document.getElementById("textoProgresso").innerText =
     "Progresso geral: " + percentual + "%";
 
-  document.getElementById("barraProgresso").style.width =
-    percentual + "%";
+  setTimeout(() => {
+    document.getElementById("nivelBateria").style.width = percentual + "%";
+  }, 200);
+
+  const mensagem = document.getElementById("mensagemMotivacional");
+
+  if (percentual === 0) {
+    mensagem.innerText = "🚀 Comece hoje. Disciplina vence motivação.";
+  } else if (percentual < 40) {
+    mensagem.innerText = "⚡ Bom início. Continue!";
+  } else if (percentual < 70) {
+    mensagem.innerText = "🔥 Ritmo forte! Não pare agora.";
+  } else if (percentual < 100) {
+    mensagem.innerText = "🏆 Falta pouco! Você tá perto.";
+  } else {
+    mensagem.innerText = "👑 100%! Missão cumprida.";
+  }
 </script>
+
 
 </body>
 </html>
