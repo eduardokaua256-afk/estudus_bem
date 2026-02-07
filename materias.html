@@ -91,6 +91,31 @@
 <a href="ingles.html">
     <div class="materia">🇬🇧 Inglês</div>
   </a>
+<script>
+  const materias = [
+    "matematicaConcluida",
+    "portuguesConcluido",
+    "geografiaConcluida",
+    "historiaConcluida",
+    "inglesConcluido"
+  ];
+
+  let concluidas = 0;
+
+  materias.forEach(item => {
+    if (localStorage.getItem(item)) {
+      concluidas++;
+    }
+  });
+
+  const percentual = Math.round((concluidas / materias.length) * 100);
+
+  document.getElementById("textoProgresso").innerText =
+    "Progresso geral: " + percentual + "%";
+
+  document.getElementById("barraProgresso").style.width =
+    percentual + "%";
+</script>
 
 </body>
 </html>
