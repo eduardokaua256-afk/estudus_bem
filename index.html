@@ -99,7 +99,7 @@
 
 </div>
   <script>
-    const barra = document.getElementById("barraPesquisa");
+  const barra = document.getElementById("barraPesquisa");
 
   barra.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
@@ -107,7 +107,20 @@
         "https://www.google.com/search?q=" + barra.value,
         "_blank"
       );
-<!-- BOTÃO FLUTUANTE DE CONFIGURAÇÃO -->
-<button id="btnConfig">⚙️</button>
-</body>
+    }
+  });
+</script>
+<script>
+  const btnConfig = document.getElementById("btnConfig");
+
+  btnConfig.addEventListener("click", () => {
+    // Supondo que a tela de configurações tenha classe "config"
+    const telaConfig = document.querySelector(".tela.config");
+
+    // Mostra a tela de configurações e desliza até ela
+    telaConfig.scrollIntoView({ behavior: "smooth" });
+  });
+</script>
+
+</body> 
 </html>
