@@ -123,6 +123,29 @@
     <button onclick="temaBranco()">☀️ Branco</button>
   </div>
 </div>
+<script>
+  const btn = document.getElementById("btnCaderno");
+  const caderno = document.getElementById("caderno");
+  const nota = document.getElementById("nota");
+
+  btn.onclick = () => {
+    caderno.style.display = "flex";
+  };
+
+  function fecharCaderno() {
+    caderno.style.display = "none";
+  }
+
+  function temaPreto() {
+    nota.style.background = "#000";
+    nota.style.color = "#fff";
+  }
+
+  function temaBranco() {
+    nota.style.background = "#fff";
+    nota.style.color = "#000";
+  }
+</script>
 
 </body>
 </html>
