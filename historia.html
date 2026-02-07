@@ -53,8 +53,27 @@
     <p>• Era Vargas</p>
     <p>• História Geral</p>
   </div>
+  <button id="btnHistoria">✔ Marcar como concluído</button>
+<p id="statusHistoria"></p>
+
 
   <a class="voltar" href="materias.html">⬅ Voltar</a>
 
 </body>
+  <script>
+  const btnHist = document.getElementById("btnHistoria");
+  const statusHist = document.getElementById("statusHistoria");
+
+  if (localStorage.getItem("historiaConcluida")) {
+    statusHist.innerText = "Concluído ✅";
+    btnHist.style.display = "none";
+  }
+
+  btnHist.onclick = function () {
+    localStorage.setItem("historiaConcluida", "true");
+    statusHist.innerText = "Concluído ✅";
+    btnHist.style.display = "none";
+  };
+</script>
+
 </html>
