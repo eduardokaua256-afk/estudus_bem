@@ -1,67 +1,79 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Estudus_bem</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudus_Bem</title>
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #000000;
-      color: #ffffff;
-      text-align: center;
-      padding: 24px;
+      background: #000;
+      color: #fff;
     }
 
+    .app {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      height: 100vh;
+    }
+
+    .tela {
+      min-width: 100vw;
+      scroll-snap-align: start;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .home { background: #0a1a2f; }
+    .pesquisa { background: #000; }
+    .notas { background: #0a1a2f; }
+    .grupos { background: #000; }
+    .config { background: #0a1a2f; }
+
     h1 {
-      margin-top: 50px;
-      font-size: 2.2rem;
-      color: #3b82f6;
+      margin-top: 40px;
+      text-align: center;
     }
 
     p {
-      margin-top: 16px;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #e5e7eb;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    button {
-      margin-top: 35px;
-      padding: 16px 30px;
-      font-size: 17px;
-      border: none;
-      border-radius: 12px;
-      background: #3b82f6;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      opacity: 0.9;
+      text-align: center;
+      opacity: 0.8;
     }
   </style>
 </head>
 <body>
 
-  <h1>Estudus_bem</h1>
+  <div class="app">
 
-  <p>
-    Você não precisa ser o mais inteligente.<br>
-    Precisa ser o mais constante.<br>
-    <strong>Estude hoje o que vai te libertar amanhã.</strong>
-  </p>
+    <section class="tela home">
+      <h1>🏠 Home</h1>
+      <p>Deslize para o lado 👉</p>
+    </section>
 
-  <a href="materias.html">
-    <button>Começar a estudar</button>
-  </a>
+    <section class="tela pesquisa">
+      <h1>🔍 Pesquisa</h1>
+      <p>Aqui vai a busca</p>
+    </section>
+
+    <section class="tela notas">
+      <h1>📝 Notas</h1>
+      <p>Aqui vai o editor</p>
+    </section>
+
+    <section class="tela grupos">
+      <h1>💬 Grupos</h1>
+      <p>Aqui vão os grupos</p>
+    </section>
+
+    <section class="tela config">
+      <h1>⚙️ Configurações</h1>
+      <p>Aqui vão as opções</p>
+    </section>
+
+  </div>
 
 </body>
 </html>
