@@ -167,6 +167,51 @@
 
   </div>
 </div>
+<script>
+  const btn = document.getElementById("btnCaderno");
+  const caderno = document.getElementById("caderno");
+  const topo = document.getElementById("topoCaderno");
+  const calc = document.getElementById("calc");
+
+  btn.onclick = () => caderno.style.display = "block";
+
+  function fecharCaderno() {
+    caderno.style.display = "none";
+  }
+
+  function add(v) {
+    calc.value += v;
+  }
+
+  function limpar() {
+    calc.value = "";
+  }
+
+  function calcular() {
+    try {
+      calc.value = eval(calc.value);
+    } catch {
+      calc.value = "Erro";
+    }
+  }
+
+  // ARRASTAR
+  let arrastando = false, offsetX, offsetY;
+
+  topo.addEventListener("touchstart", e => {
+    arrastando = true;
+    offsetX = e.touches[0].clientX - caderno.offsetLeft;
+    offsetY = e.touches[0].clientY - caderno.offsetTop;
+  });
+
+  document.addEventListener("touchmove", e => {
+    if (!arrastando) return;
+    caderno.style.left = e.touches[0].clientX - offsetX + "px";
+    caderno.style.top = e.touches[0].clientY - offsetY + "px";
+  });
+
+  document.addEventListener("touchend", () => arrastando = false);
+</script>
 
 </body>
 </html>
