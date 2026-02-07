@@ -78,7 +78,26 @@
   </a>
 
 </div>
-  <script>
+  <script> <script>
+  // Mapeamento de playlists
+  const playlists = {
+    "Matematica": "https://youtube.com/playlist?list=PL83s8LGM84J4mRCdgGKJaZh8KWFU7GgcO",
+    "Portugues": "https://youtube.com/playlist?list=PLonj8APB8U2gpcVuB0dULMCHpaZQrCpvg",
+    "Geografia": "https://youtube.com/playlist?list=PLNM2T4DNzmq7p-TtQPn3vjNU9t8M0Arxc",
+    "Historia": "https://youtube.com/playlist?list=PLhq_6JZHN4U1oy44SVX3RqJG9AQacB8jK",
+    "Ingles": "https://youtube.com/playlist?list=PLvnDcR9zJ3ToYT9CcWdY3hNuBh4FY99J5",
+    // Continue adicionando todas as matérias
+  };
+
+  function abrirMateria(nome) {
+    if (playlists[nome]) {
+      window.open(playlists[nome], "_blank");
+    } else {
+      alert("Playlist não cadastrada ainda para: " + nome);
+    }
+  }
+</script>
+
   const barra = document.getElementById("barraPesquisa");
 
   barra.addEventListener("keydown", function (e) {
