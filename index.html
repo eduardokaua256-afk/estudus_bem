@@ -5,7 +5,51 @@
   <title>Estudus_bem</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
+  <style #btnCaderno {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 24px;
+  padding: 15px;
+  border-radius: 50%;
+  border: none;
+  background: #1e90ff;
+  color: white;
+}
+
+#caderno {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background: #111;
+  display: none;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+#caderno .topo {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #1e90ff;
+}
+
+#nota {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  background: #000;
+  color: #fff;
+}
+
+.config {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
