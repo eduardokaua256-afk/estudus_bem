@@ -115,37 +115,47 @@
     <span>Caderno</span>
     <button onclick="fecharCaderno()">✖</button>
   </div>
+<!-- BOTÃO FLUTUANTE -->
+<button id="btnCaderno">📘</button>
 
-  <textarea id="nota" placeholder="Escreva suas anotações aqui..."></textarea>
+<!-- CADERNO FLUTUANTE -->
+<div id="caderno">
+  <div id="topoCaderno">
+    <span>Caderno</span>
+    <button onclick="fecharCaderno()">✖</button>
+  </div>
 
-  <div class="config">
-    <button onclick="temaPreto()">🌙 Preto</button>
-    <button onclick="temaBranco()">☀️ Branco</button>
+  <!-- CONTEÚDO -->
+  <div class="conteudo">
+
+    <h3>🧮 Calculadora</h3>
+
+    <input id="calc" readonly />
+
+    <div class="botoes">
+      <button onclick="add('7')">7</button>
+      <button onclick="add('8')">8</button>
+      <button onclick="add('9')">9</button>
+      <button onclick="add('/')">÷</button>
+
+      <button onclick="add('4')">4</button>
+      <button onclick="add('5')">5</button>
+      <button onclick="add('6')">6</button>
+      <button onclick="add('*')">×</button>
+
+      <button onclick="add('1')">1</button>
+      <button onclick="add('2')">2</button>
+      <button onclick="add('3')">3</button>
+      <button onclick="add('-')">−</button>
+
+      <button onclick="add('0')">0</button>
+      <button onclick="limpar()">C</button>
+      <button onclick="calcular()">=</button>
+      <button onclick="add('+')">+</button>
+    </div>
+
   </div>
 </div>
-<script>
-  const btn = document.getElementById("btnCaderno");
-  const caderno = document.getElementById("caderno");
-  const nota = document.getElementById("nota");
-
-  btn.onclick = () => {
-    caderno.style.display = "flex";
-  };
-
-  function fecharCaderno() {
-    caderno.style.display = "none";
-  }
-
-  function temaPreto() {
-    nota.style.background = "#000";
-    nota.style.color = "#fff";
-  }
-
-  function temaBranco() {
-    nota.style.background = "#fff";
-    nota.style.color = "#000";
-  }
-</script>
 
 </body>
 </html>
