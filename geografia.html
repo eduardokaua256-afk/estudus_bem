@@ -53,8 +53,27 @@
     <p>• Hidrografia</p>
     <p>• Cartografia</p>
   </div>
+  <button id="btnGeografia">✔ Marcar como concluído</button>
+<p id="statusGeografia"></p>
+
 
   <a class="voltar" href="materias.html">⬅ Voltar</a>
 
 </body>
+  <script>
+  const btnGeo = document.getElementById("btnGeografia");
+  const statusGeo = document.getElementById("statusGeografia");
+
+  if (localStorage.getItem("geografiaConcluida")) {
+    statusGeo.innerText = "Concluído ✅";
+    btnGeo.style.display = "none";
+  }
+
+  btnGeo.onclick = function () {
+    localStorage.setItem("geografiaConcluida", "true");
+    statusGeo.innerText = "Concluído ✅";
+    btnGeo.style.display = "none";
+  };
+</script>
+
 </html>
