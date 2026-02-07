@@ -1,129 +1,145 @@
-<input 
-  id="barraPesquisa"
-  type="text"
-  placeholder="Pesquisa"
-/>
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Estudus_bem</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudus_Bem</title>
+  <style>
+    /* RESET BÁSICO */
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
 
-  <style>#btnConfig {
-  position: fixed;
-  bottom: 20px;   /* distância do rodapé */
-  left: 20px;     /* distância da lateral esquerda */
-  z-index: 1000;  /* sempre acima de outros elementos */
-  font-size: 24px;
-  padding: 15px;
-  border-radius: 50%;
-  border: none;
-  background: #00bfff;
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  transition: transform 0.2s;
-}
+    body { background: #0a1a2f; color: #fff; overflow-x: hidden; }
 
-#btnConfig:hover {
-  transform: scale(1.1);
-}
+    /* SEÇÕES */
+    .tela { min-width: 100vw; height: 100vh; padding: 20px; scroll-snap-align: start; display: flex; flex-direction: column; }
+    .home { background: #0a1a2f; }
+    .pesquisa { background: #111; }
+    .config { background: #0a1a2f; }
 
+    /* CARDS */
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap: 15px; margin-top:20px; }
+    .card { background:#1e90ff; padding:15px; border-radius:12px; text-align:center; cursor:pointer; transition: transform 0.2s, background 0.2s; }
+    .card:hover { transform: scale(1.05); background: #00bfff; }
+    .card h3 { margin-bottom:10px; }
+    .card p { font-size:12px; opacity:0.9; }
 
- #barraPesquisa {
-  width: 100%;
-  padding: 15px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-}
+    /* BONEQUINHO ACIMA DA PESQUISA */
+    .mascote { width:80px; height:80px; margin:0 auto 15px auto; background:#1e90ff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:40px; animation: flutuar 2s ease-in-out infinite; }
+    @keyframes flutuar { 0% { transform: translateY(0);} 50% { transform: translateY(-8px);} 100% { transform: translateY(0);} }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #000000;
-      color: #ffffff;
-      text-align: center;
-      padding: 24px;
+    /* INPUT PESQUISA */
+    #barraPesquisa { width:100%; padding:15px; font-size:16px; border-radius:8px; border:none; outline:none; }
+
+    /* BOTÕES FLUTUANTES */
+    #btnConfig, #btnCaderno {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+      font-size:24px;
+      padding:15px;
+      border-radius:50%;
+      border:none;
+      background:#00bfff;
+      color:white;
+      cursor:pointer;
+      box-shadow:0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+      margin-bottom: 10px;
     }
+    #btnConfig:hover, #btnCaderno:hover { transform: scale(1.1); }
 
-    h1 {
-      margin-top: 50px;
-      font-size: 2.2rem;
-      color: #3b82f6;
-    }
-
-    p {
-      margin-top: 16px;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #e5e7eb;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    button {
-      margin-top: 35px;
-      padding: 16px 30px;
-      font-size: 17px;
-      border: none;
-      border-radius: 12px;
-      background: #3b82f6;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
+    /* CADERNO FLUTUANTE */
+    #caderno { position: fixed; bottom: 80px; right: 20px; width:200px; height:250px; background:#fff; color:#000; border-radius:12px; padding:10px; box-shadow:0 4px 8px rgba(0,0,0,0.3); overflow:auto; cursor: move; }
   </style>
 </head>
 <body>
 
-  <h1>Estudus_bem</h1>
+  <!-- HOME -->
+  <section class="tela home">
+    <h1>🏠 Home</h1>
+    <p>Escolha a matéria para abrir a playlist:</p>
+    <div class="cards">
+      <div class="card" onclick="abrirMateria('Matematica')"><h3>Matemática</h3><p>Aritmética, Álgebra, Geometria...</p></div>
+      <div class="card" onclick="abrirMateria('Portugues')"><h3>Português</h3><p>Gramática, Redação, Interpretação...</p></div>
+      <div class="card" onclick="abrirMateria('Geografia')"><h3>Geografia</h3><p>Brasil, Clima, Biomas...</p></div>
+      <div class="card" onclick="abrirMateria('Historia')"><h3>História</h3><p>Brasil, Geral, Contemporânea...</p></div>
+      <div class="card" onclick="abrirMateria('Ingles')"><h3>Inglês</h3><p>Gramática, Vocabulário, Leitura...</p></div>
+      <div class="card" onclick="abrirMateria('Espanhol')"><h3>Espanhol</h3><p>Gramática, Vocabulário...</p></div>
+      <div class="card" onclick="abrirMateria('Fisica')"><h3>Física</h3><p>Cinemática, Dinâmica, Termologia...</p></div>
+      <div class="card" onclick="abrirMateria('Quimica')"><h3>Química</h3><p>Química Geral, Orgânica, Inorgânica...</p></div>
+      <div class="card" onclick="abrirMateria('Biologia')"><h3>Biologia</h3><p>Genética, Citologia, Ecologia...</p></div>
+      <div class="card" onclick="abrirMateria('RaciocinioLogico')"><h3>Raciocínio Lógico</h3><p>Sequências, Lógica, Problemas...</p></div>
+      <div class="card" onclick="abrirMateria('Direito')"><h3>Direito</h3><p>Constitucional, Penal, Administrativo...</p></div>
+      <div class="card" onclick="abrirMateria('Informática')"><h3>Informática</h3><p>Office, Internet, Segurança...</p></div>
+      <div class="card" onclick="abrirMateria('Atualidades')"><h3>Atualidades</h3><p>Política, Economia, Meio Ambiente...</p></div>
+    </div>
+  </section>
 
-  <p>
-    Você não precisa ser o mais inteligente.<br>
-    Precisa ser o mais constante.<br>
-    <strong>Estude hoje o que vai te libertar amanhã.</strong>
-  </p>
+  <!-- PESQUISA -->
+  <section class="tela pesquisa">
+    <h1>🔍 Pesquisa</h1>
+    <div class="mascote">🤓</div>
+    <input id="barraPesquisa" type="text" placeholder="Pesquisar matéria, PDF, assunto...">
+    <p>Digite e pressione Enter</p>
+  </section>
 
-  <a href="materias.html">
-    <button>Começar a estudar</button>
-  </a>
+  <!-- CONFIGURAÇÕES -->
+  <section class="tela config">
+    <h1>⚙️ Configurações</h1>
+    <p>Troque tema, veja notas, personalize o site...</p>
+  </section>
 
-</div>
+  <!-- BOTÕES FLUTUANTES -->
+  <button id="btnCaderno">📘</button>
+  <button id="btnConfig">⚙️</button>
+
+  <!-- CADERNO FLUTUANTE -->
+  <div id="caderno" style="display:none;">Notas rápidas...</div>
+
+  <!-- JAVASCRIPT -->
   <script>
-  const barra = document.getElementById("barraPesquisa");
+    window.onload = function() {
+      // PLAYLISTS
+      const playlists = {
+        "Matematica":"https://youtube.com/playlist?list=PL83s8LGM84J4mRCdgGKJaZh8KWFU7GgcO",
+        "Portugues":"https://youtube.com/playlist?list=PLonj8APB8U2gpcVuB0dULMCHpaZQrCpvg",
+        "Geografia":"https://youtube.com/playlist?list=PLNM2T4DNzmq7p-TtQPn3vjNU9t8M0Arxc",
+        "Historia":"https://youtube.com/playlist?list=PLhq_6JZHN4U1oy44SVX3RqJG9AQacB8jK",
+        "Ingles":"https://youtube.com/playlist?list=PLvnDcR9zJ3ToYT9CcWdY3hNuBh4FY99J5"
+      };
+      window.abrirMateria = function(nome){
+        if(playlists[nome]) window.open(playlists[nome], "_blank");
+        else alert("Playlist não cadastrada para: "+nome);
+      }
 
-  barra.addEventListener("keydown", function (e) {
-    if (e.key === "Enter") {
-      window.open(
-        "https://www.google.com/search?q=" + barra.value,
-        "_blank"
-      );
+      // BOTÃO CONFIGURAÇÃO
+      const btnConfig = document.getElementById("btnConfig");
+      const telaConfig = document.querySelector(".tela.config");
+      btnConfig.addEventListener("click", ()=>{ telaConfig.scrollIntoView({behavior:"smooth"}); });
+
+      // CADERNO FLUTUANTE
+      const btnCaderno = document.getElementById("btnCaderno");
+      const caderno = document.getElementById("caderno");
+      btnCaderno.addEventListener("click", ()=>{ caderno.style.display = caderno.style.display==="none"?"block":"none"; });
+
+      // ARRASTAR CADERNO
+      let offsetX, offsetY, isDown=false;
+      caderno.addEventListener("mousedown", e=>{ isDown=true; offsetX=e.offsetX; offsetY=e.offsetY; });
+      document.addEventListener("mouseup", ()=>{ isDown=false; });
+      document.addEventListener("mousemove", e=>{
+        if(!isDown) return;
+        caderno.style.left = e.pageX - offsetX + "px";
+        caderno.style.top = e.pageY - offsetY + "px";
+      });
+
+      // BARRA DE PESQUISA
+      const barra = document.getElementById("barraPesquisa");
+      barra.addEventListener("keydown", e=>{
+        if(e.key==="Enter") window.open("https://www.google.com/search?q="+barra.value,"_blank");
+      });
     }
-  });
-</script> <script>
-  const btnConfig = document.getElementById("btnConfig");
+  </script>
 
-  btnConfig.addEventListener("click", () => {
-    // Supondo que a tela de configurações tenha classe "config"
-    const telaConfig = document.querySelector(".tela.config");
-
-    // Mostra a tela de configurações e desliza até ela
-    telaConfig.scrollIntoView({ behavior: "smooth" });
-  });
-</script>
-
-<!-- BOTÃO FLUTUANTE DE CONFIGURAÇÃO -->
-<button id="btnConfig">⚙️</button>
-
-</body> 
+</body>
 </html>
