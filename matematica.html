@@ -24,61 +24,6 @@
       background: #111111;
       border-radius: 12px;
       padding: 18px;
-      line-height: 1.6;
-    }
-
-    .voltar {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 20px;
-      background: #3b82f6;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-  </style>
-</head>
-
-<body>
-
-  <h1>📐 Matemática</h1>
-
-  <div class="conteudo">
-    <p>Aqui ficará o conteúdo de Matemática.</p>
-    <p>Você pode colocar textos, links, PDFs ou vídeos.</p>
-  </div>
-
-  <a class="voltar" href="materias.html">⬅ Voltar</a>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Matemática | Estudus_bem</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #000000;
-      color: #ffffff;
-      padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      color: #3b82f6;
-      margin-bottom: 20px;
-    }
-
-    .conteudo {
-      background: #111111;
-      border-radius: 12px;
-      padding: 18px;
       margin-bottom: 15px;
     }
 
@@ -99,37 +44,6 @@
   </style>
 </head>
 <body>
-  <body>
-
-  <h1>📐 Matemática</h1>
-
-  <div class="conteudo">
-    <p>Conteúdo principal de Matemática</p>
-
-    <button id="btnConcluir">✔ Marcar como concluído</button>
-    <p id="status"></p>
-  </div>
-
-  <a class="voltar" href="materias.html">⬅ Voltar</a>
-
-  <script>
-    const btn = document.getElementById("btnConcluir");
-    const status = document.getElementById("status");
-
-    if (localStorage.getItem("matematicaConcluida")) {
-      status.innerText = "Concluído ✅";
-      btn.style.display = "none";
-    }
-
-    btn.onclick = function () {
-      localStorage.setItem("matematicaConcluida", "true");
-      status.innerText = "Concluído ✅";
-      btn.style.display = "none";
-    };
-  </script>
-
-</body>
-
 
   <h1>📐 Matemática</h1>
 
