@@ -124,23 +124,6 @@
     telaConfig.scrollIntoView({ behavior: "smooth" });
   });
 </script>
-<section class="tela config">
-  <h1>⚙️ Configurações</h1>
-  <!-- Aqui vão os itens de configuração -->
-</section>
-<script>
-  window.onload = function() {
-    const btnConfig = document.getElementById("btnConfig");
-    const telaConfig = document.querySelector(".tela.config");
-
-    if (!btnConfig) return alert("Botão de configuração não encontrado!");
-    if (!telaConfig) return alert("Tela de configuração não encontrada!");
-
-    btnConfig.addEventListener("click", () => {
-      telaConfig.scrollIntoView({ behavior: "smooth" });
-    });
-  }
-</script>
 
 </body> 
 </html>
