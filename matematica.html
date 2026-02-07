@@ -54,8 +54,27 @@
     <p>• Regra de três</p>
     <p>• Equações</p>
   </div>
+  <button id="btnPortugues">✔ Marcar como concluído</button>
+<p id="statusPortugues"></p>
+
 
   <a class="voltar" href="materias.html">⬅ Voltar</a>
 
 </body>
+  <script>
+  const btnPort = document.getElementById("btnPortugues");
+  const statusPort = document.getElementById("statusPortugues");
+
+  if (localStorage.getItem("portuguesConcluido")) {
+    statusPort.innerText = "Concluído ✅";
+    btnPort.style.display = "none";
+  }
+
+  btnPort.onclick = function () {
+    localStorage.setItem("portuguesConcluido", "true");
+    statusPort.innerText = "Concluído ✅";
+    btnPort.style.display = "none";
+  };
+</script>
+
 </html>
